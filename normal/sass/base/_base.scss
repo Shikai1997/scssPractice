@@ -1,0 +1,48 @@
+*,
+*:after,
+*:before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html{
+    // 定義 1rem 大小為何
+    // 1rem = 10px; 10px/16px = 62.5%
+    font-size: 62.5%;
+
+    @include respond(big-desktop) {
+            font-size: 75%;
+            // 1rem = 12; 12/16 = 75%
+    }
+
+    @include respond(tab-land) {
+            font-size: 56.25%;
+            // 1rem = 9px; 9/16 = 56.25%
+    }
+
+    @include respond(tab-port) {
+            font-size: 50%;
+            // 1rem = 8px; 8/16 = 50%
+    }
+
+    
+}
+body{
+    padding: 3rem;
+    box-sizing: border-box;
+    color: $color-grey-dark;
+
+    @include respond(tab-port) {
+        padding: 0;
+        // 1rem = 8px; 8/16 = 50%
+    }
+
+
+}
+.text-box{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50% , -50% );
+    text-align: center;
+}
